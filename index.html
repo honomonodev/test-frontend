@@ -1,1 +1,50 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World!!!</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav role="navigation" aria-label="Main Navigation">
+        <div class="nav-links">
+            <a href="#home" data-en="Home" data-jp="ホーム">Home</a>
+            <a href="#about" data-en="About" data-jp="約">About</a>
+            <a href="#contact" data-en="Contact" data-jp="連絡先">Contact</a>
+        </div>
+        <div class="nav-right">
+            <input type="text" placeholder="Search..." aria-label="Search">
+            <select id="language-selector" onchange="switchLanguage()" aria-label="Language Selector">
+                <option value="en">🇬🇧 EN</option>
+                <option value="jp">🇯🇵 JP</option>
+            </select>
+        </div>
+    </nav>
+    <h1 data-en="Welcome to Makiko Sese Web Page" data-jp="マキコセセのウェブページへようこそ">Welcome to Makiko Sese Web Page</h1>
+    <div class="card-container">
+        <div class="card" onclick="displayContent('kamishibai')">
+            <h2 data-en="Kamishibai" data-jp="紙芝居">Kamishibai</h2>
+            <p data-en="Interactive storytelling experience." data-jp="インタラクティブなストーリーテリング体験。">Interactive storytelling experience.</p>
+        </div>
+        <div class="card" onclick="displayContent('translation')">
+            <h2 data-en="Translation" data-jp="翻訳">Translation</h2>
+            <p data-en="High-quality translation services." data-jp="高品質な翻訳サービス。">High-quality translation services.</p>
+        </div>
+        <div class="card" onclick="displayContent('support')">
+            <h2 data-en="Support" data-jp="サポート">Support</h2>
+            <p data-en="24/7 customer support." data-jp="24時間365日のカスタマーサポート。">24/7 customer support.</p>
+        </div>
+    </div>
+    <div id="content-display" class="content-display"></div>
+    <footer>
+        <p data-en="© 2023 Makiko Sese. All rights reserved." data-jp="© 2023 マキコセセ。全著作権所有。">© 2023 Makiko Sese. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#" data-en="Facebook" data-jp="フェイスブック">Facebook</a>
+            <a href="#" data-en="Twitter" data-jp="ツイッター">Twitter</a>
+            <a href="#" data-en="Instagram" data-jp="インスタグラム">Instagram</a>
+        </div>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>
