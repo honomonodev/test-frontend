@@ -1,0 +1,248 @@
+// Variables
+@primary-color: #4CAF50;
+@secondary-color: #FF5722;
+@font-family: 'Maven Pro', sans-serif;
+@base-font-size: 16px;
+@hero-bg: url('/assets/bg.png');
+@white: #ffffff;
+@black: #000000;
+@light-gray: #f5f5f5;
+@dark-gray: #333333;
+
+// Mixins
+.border-radius(@radius) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+
+.transition(@property, @duration, @timing) {
+  transition: @property @duration @timing;
+}
+
+// Styles
+body {
+  font-family: @font-family;
+  font-size: @base-font-size;
+  color: @black;
+  margin: 0;
+  padding: 0;
+  background-color: @white;
+}
+
+header {
+  background-color: @white;
+  padding: 10px 20px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  #nav-toggle {
+    display: none;
+    background-color: @secondary-color;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    .border-radius(5px);
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+
+    li {
+      margin: 0 15px;
+
+      a {
+        color: @dark-gray;
+        text-decoration: none;
+        font-weight: 500;
+        .transition(color, 0.3s, ease);
+
+        &:hover {
+          color: @primary-color;
+        }
+      }
+    }
+  }
+}
+
+.hero {
+  background: @hero-bg no-repeat center center;
+  background-size: cover;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  .hero-content {
+    max-width: 600px;
+    color: @white; // Change text color to black
+    margin-top: -40px; // Move the content up by 40px
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      background-color: @secondary-color;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      .border-radius(5px);
+      .transition(background-color, 0.3s, ease);
+
+      &:hover {
+        background-color: darken(@secondary-color, 10%);
+      }
+    }
+  }
+}
+
+.section {
+  padding: 60px 20px;
+  text-align: center;
+
+  h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 1.2em;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 auto;
+
+  label {
+    margin-bottom: 5px;
+    font-size: 1.1em;
+  }
+
+  input, textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    .border-radius(5px);
+    font-size: 1em;
+  }
+
+  button {
+    background-color: @primary-color;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    .border-radius(5px);
+    .transition(background-color, 0.3s, ease);
+
+    &:hover {
+      background-color: darken(@primary-color, 10%);
+    }
+  }
+}
+
+footer {
+  background-color: @light-gray;
+  color: @dark-gray;
+  text-align: center;
+  padding: 20px 0;
+  border-top: 1px solid #e0e0e0;
+
+  p {
+    margin: 0;
+    font-size: 0.9em;
+  }
+
+  .social-links {
+    margin-top: 10px;
+
+    a {
+      color: @dark-gray;
+      margin: 0 10px;
+      text-decoration: none;
+      font-size: 1.2em;
+      .transition(color, 0.3s, ease);
+
+      &:hover {
+        color: @primary-color;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    #nav-toggle {
+      display: block;
+    }
+
+    nav ul {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+
+      li {
+        margin: 10px 0;
+      }
+    }
+
+    nav ul.active {
+      display: flex;
+    }
+  }
+
+  .hero {
+    padding: 50px 20px;
+    height: auto;
+
+    .hero-content {
+      h1 {
+        font-size: 2.5em;
+      }
+
+      p {
+        font-size: 1em;
+      }
+    }
+  }
+
+  .section {
+    padding: 40px 20px;
+
+    h2 {
+      font-size: 2em;
+    }
+
+    p {
+      font-size: 1em;
+    }
+  }
+}
